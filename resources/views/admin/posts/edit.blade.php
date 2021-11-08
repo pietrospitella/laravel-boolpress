@@ -23,6 +23,18 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="category_id">Category</label>
+                    <select name="category_id" id="category" class="form-control @error('category_id') is-invalid @enderror">
+                        <option value="">--Select a category--</option>
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}" {{old('category_id', $post->category_id) == $category->id ? 'selected' : NULL}}>{{$category->name}}</option> 
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-success">Save</button>
                 </div>
                 </form>

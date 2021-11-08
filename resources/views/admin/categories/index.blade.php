@@ -15,27 +15,21 @@
         <thead>
           <tr> 
             <th scope="col">#</th>
-            <th scope="col">Title</th>
+            <th scope="col">Name</th>
             <th scope="col">Slug</th>
-            <th scope="col">Category</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($posts as $post)
+          @foreach ($categories as $category)
             <tr>
-                <th scope="row">{{$post['id']}}</th>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['slug']}}</td>
+                <th scope="row">{{$category['id']}}</th>
+                <td>{{$category['name']}}</td>
+                <td>{{$category['slug']}}</td>                  
                 <td>
-                  @if ($post->category)
-                    {{$post->category->name}}
-                  @endif
-                </td>                  
-                <td>
-                    <a class="btn btn-info" href="{{route('admin.posts.show', $post['id'])}}">Details</a>
-                    <a class="btn btn-warning" href="{{route('admin.posts.edit', $post['id'])}}">Modify</a>
-                    <form class="delete-post" method="post" action="{{route('admin.posts.destroy', $post['id'])}}">
+                    <a class="btn btn-info" href="{{ route('admin.categories.show', $category->id) }}">Details</a>
+                    <a class="btn btn-warning" href="">Modify</a>
+                    <form class="delete-post" method="post" action="">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

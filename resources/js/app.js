@@ -10,3 +10,12 @@ deleteForm.forEach(item => {
         }
     })
 })
+
+const alertTimeOut = document.querySelectorAll('.alert');
+
+
+if (alertTimeOut) {
+    setTimeout(function() {
+        alertTimeOut[0].remove()
+    }, 2000);
+}

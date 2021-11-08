@@ -37280,6 +37280,13 @@ deleteForm.forEach(function (item) {
     }
   });
 });
+var alertTimeOut = document.querySelectorAll('.alert');
+
+if (alertTimeOut) {
+  setTimeout(function () {
+    alertTimeOut[0].remove();
+  }, 2000);
+}
 
 /***/ }),
 
