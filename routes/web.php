@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('index');
 
+Route::resource('/posts', 'PostController');
+
 Auth::routes();
 
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')
