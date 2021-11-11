@@ -29,7 +29,7 @@
                 <td>
                     <a class="btn btn-info" href="{{ route('admin.categories.show', $category->id) }}">Details</a>
                     <a class="btn btn-warning" href="">Modify</a>
-                    <form class="delete-post" method="post" action="">
+                    <form class="d-inline-block delete-post" method="post" action="">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
